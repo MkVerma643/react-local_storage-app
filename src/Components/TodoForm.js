@@ -9,23 +9,23 @@ import {
 } from "reactstrap";
 import { v4 } from "uuid";
 
-const TodoForm = () => {
+const TodoForm = (addTodos) => {
   const [todoString, setTodoString] = useState("");
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if(todoString === '') {
-        return alert('Please Enter Some Value');
+    if (todoString === "") {
+      return alert("Please Enter Some Value");
     }
     const todo = {
-        todoString,
-        id:v4()
-    }
+      todoString,
+      id: v4(),
+    };
 
     addTodos(todo);
 
     setTodoString("");
-  }
+  };
 
   return (
     <Form onSubmit={handleSubmit}>
