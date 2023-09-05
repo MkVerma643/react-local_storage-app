@@ -15,4 +15,4 @@ const Todos = ({todos, marksComplete}) => {
     )
 }
 
-export default App;
+export default Todos;

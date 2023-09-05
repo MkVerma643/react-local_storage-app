@@ -38,11 +38,10 @@ const TodoForm = (addTodos) => {
             placeholder="Enter Todo"
             value={todoString}
             onChange={(e) => setTodoString(e.target.value)}
-          >
-            <div className="input-group-prepend">
-              <Button color="success">Add Todo</Button>
-            </div>
-          </Input>
+          ></Input>
+          <div className="input-group-prepend">
+            <Button color="success">Add Todo</Button>
+          </div>
         </InputGroup>
       </FormGroup>
     </Form>
