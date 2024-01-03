@@ -1,15 +1,8 @@
 import React, { useState } from "react";
-import {
-  FormGroup,
-  Input,
-  InputGroup,
-  Button,
-  Form,
-  Container,
-} from "reactstrap";
+import { FormGroup, Input, InputGroup, Button, Form } from "reactstrap";
 import { v4 } from "uuid";
 
-const TodoForm = (addTodos) => {
+const TodoForm = ({ addTodos }) => {
   const [todoString, setTodoString] = useState("");
 
   const handleSubmit = (e) => {
@@ -40,7 +33,9 @@ const TodoForm = (addTodos) => {
             onChange={(e) => setTodoString(e.target.value)}
           ></Input>
           <div className="input-group-prepend">
-            <Button color="success">Add Todo</Button>
+            <Button color="success" type="submit">
+              Add Todo
+            </Button>
           </div>
         </InputGroup>
       </FormGroup>

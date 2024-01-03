@@ -26,14 +26,14 @@ const App = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  const markComplete = id => {
+  const marksComplete = id => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
   return (
     <Container fluid>
       <h1>Todo with local storage</h1>
-      <Todos todos={todos} markComplete={markComplete} />
+      <Todos todos={todos} marksComplete={marksComplete} />
       <TodoForm addTodos={addTodos} />
     </Container>
   );
