@@ -8,7 +8,6 @@ import TodoForm from "./Components/TodoForm";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
-  
 
   useEffect(() => {
     const localTodos = localStorage.getItem("todos");
@@ -18,7 +17,7 @@ const App = () => {
     }
   }, []);
 
-  const addTodos = async todo => {
+  const addTodos = async (todo) => {
     setTodos([...todos, todo]);
   };
 
@@ -26,14 +25,14 @@ const App = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  const marksComplete = id => {
-    setTodos(todos.filter(todo => todo.id !== id));
+  const markComplete = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
     <Container fluid>
       <h1>Todo with local storage</h1>
-      <Todos todos={todos} marksComplete={marksComplete} />
+      <Todos todos={todos} markComplete={markComplete} />
       <TodoForm addTodos={addTodos} />
     </Container>
   );
