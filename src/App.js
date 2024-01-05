@@ -17,7 +17,7 @@ const App = () => {
     }
   }, []);
 
-  const addTodos = async (todo) => {
+  const addTodos = async todo => {
     setTodos([...todos, todo]);
   };
 
@@ -25,8 +25,8 @@ const App = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  const markComplete = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+  const markComplete = id => {
+    setTodos(todos.filter(todo => todo.id !== id));
   };
 
   return (
